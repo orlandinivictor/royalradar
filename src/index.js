@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { CssBaseline } from '@material-ui/core';
+import CssBaseline from '@mui/material/CssBaseline';
 import App from "./App";
 
 import './services/firebase';

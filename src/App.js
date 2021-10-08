@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@material-ui/core';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Routes from './routes';
 
@@ -8,8 +8,8 @@ function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#0066ff',
-        contrastText: '#0066ff',
+        main: '#4169e1',
+        contrastText: '#fff',
       }
     },
     breakpoints: {

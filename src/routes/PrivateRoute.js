@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Cookies from 'js-cookie';
 
 export default function PrivateRoute({
   component: Component,
@@ -9,8 +10,7 @@ export default function PrivateRoute({
   ...rest
 }) {
   // const { db } = useFirebase();
-  const isLoggedIn = true;
-  // const userId = Cookie.get('userUID');
+  const isLoggedIn = Cookies.get('userID') !== undefined;
 
   if (!isLoggedIn && isClosed) {
     return (
