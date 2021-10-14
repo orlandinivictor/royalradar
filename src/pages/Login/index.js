@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory, Link, useLocation } from 'react-router-dom';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import Cookies from 'js-cookie';
 
@@ -21,6 +21,9 @@ import styles from './styles';
 
 export default function Login() {
   const history = useHistory();
+  const params = useLocation();
+  const isRegister = params.pathname === '/register';
+
   const classes = styles();
 
   const [email, setEmail] = useState('');
@@ -39,7 +42,7 @@ export default function Login() {
     Cookies.set('userID', user.uid, { expires: 1 });
 
     history.push('/');
-  }
+  };
 
   return (
     <Box className={classes.loginScreen}>
@@ -48,28 +51,63 @@ export default function Login() {
           <img src={logo} alt="Logotipo Royal Radar" className={classes.logo} />
 
           <Typography className={classes.welcomeText}>
-            Seja bem-vindo ao portal de acesso de monitoramento de cameras RoyalRadar
+            Seja bem-vindo ao portal de acesso de monitoramento de cameras
+            RoyalRadar
           </Typography>
         </Box>
 
         <Box className={classes.loginInfos}>
           <Box className={classes.inputs}>
-            <TextField margin="dense" label="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" InputProps={{ classes: { notchedOutline: classes.notchedOutline }}} />
-            <TextField margin="dense" label="Senha" value={pass} onChange={(e) => setPass(e.target.value)} type="password" name="pass" InputProps={{ classes: { notchedOutline: classes.notchedOutline }}} />
-            <Typography variant="caption">Ainda não tem uma conta? <MUILink component={Link} to="/register">Clique aqui para criar</MUILink></Typography>
+            <TextField
+              margin="dense"
+              label="E-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              name="email"
+              InputProps={{
+                classes: { notchedOutline: classes.notchedOutline },
+              }}
+            />
+            <TextField
+              margin="dense"
+              label="Senha"
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
+              type="password"
+              name="pass"
+              InputProps={{
+                classes: { notchedOutline: classes.notchedOutline },
+              }}
+            />
+            <Typography variant="caption">
+              Ainda não tem uma conta?{' '}
+              <MUILink component={Link} to="/register">
+                Clique aqui para criar
+              </MUILink>
+            </Typography>
           </Box>
 
           <Box className={classes.buttons}>
-            <Button variant="contained" color="primary">Logar com senha</Button>
-            <Button variant="contained" color="primary" onClick={handleGoogleLogin} className={classes.googleLogin}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => history.push('/register')}
+            >
+              Logar com senha
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleGoogleLogin}
+              className={classes.googleLogin}
+            >
               <GoogleIcon />
-              <span>
-                Logar com o Google
-              </span>
+              <span>Logar com o Google</span>
             </Button>
           </Box>
         </Box>
       </Paper>
     </Box>
-  )
+  );
 }
