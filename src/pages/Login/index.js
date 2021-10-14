@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import Cookies from 'js-cookie';
 
@@ -11,7 +11,9 @@ import {
   Paper,
   TextField,
   Typography,
+  Link as MUILink,
 } from '@mui/material';
+import GoogleIcon from '@mui/icons-material/Google';
 
 import logo from '../../assets/logo.png';
 
@@ -46,7 +48,7 @@ export default function Login() {
           <img src={logo} alt="Logotipo Royal Radar" className={classes.logo} />
 
           <Typography className={classes.welcomeText}>
-            Seja bem-vindo ao portal de acesso de monitoramento de cameras RoyalRadar.
+            Seja bem-vindo ao portal de acesso de monitoramento de cameras RoyalRadar
           </Typography>
         </Box>
 
@@ -54,11 +56,17 @@ export default function Login() {
           <Box className={classes.inputs}>
             <TextField margin="dense" label="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" InputProps={{ classes: { notchedOutline: classes.notchedOutline }}} />
             <TextField margin="dense" label="Senha" value={pass} onChange={(e) => setPass(e.target.value)} type="password" name="pass" InputProps={{ classes: { notchedOutline: classes.notchedOutline }}} />
+            <Typography variant="caption">Ainda não tem uma conta? <MUILink component={Link} to="/register">Clique aqui para criar</MUILink></Typography>
           </Box>
 
           <Box className={classes.buttons}>
-            <Button variant="contained" color="primary">Login com senha</Button>
-            <Button variant="contained" color="primary" onClick={handleGoogleLogin}>Faça login com o Google</Button>
+            <Button variant="contained" color="primary">Logar com senha</Button>
+            <Button variant="contained" color="primary" onClick={handleGoogleLogin} className={classes.googleLogin}>
+              <GoogleIcon />
+              <span>
+                Logar com o Google
+              </span>
+            </Button>
           </Box>
         </Box>
       </Paper>

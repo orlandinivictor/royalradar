@@ -11,17 +11,22 @@ const styles = makeStyles({
     width: '100vw',
     height: '100vh',
 
-    background: '#f1f5f9',
+    background: 'linear-gradient(to top left, #0e2058 60%, #fff 400%)'
   },
 
   loginContainer: {
     paddingInline: 10,
-    paddingBlock: 20,
+    paddingBlock: 30,
 
-    width: '80%',
-    height: '80%',
+    width: 600,
+    // height: '80%',
 
-    background: '#0e2058 !important',
+    background: 'rgba( 255, 255, 255, 0.25 ) !important',
+    boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
+    backdropFilter: 'blur( 4px )',
+    '-webkit-backdrop-filter': 'blur( 4px )',
+    borderRadius: 10,
+    border: '1px solid rgba( 255, 255, 255, 0.18 )'
   },
 
   companyInfo: {
@@ -36,16 +41,18 @@ const styles = makeStyles({
   },
 
   welcomeText: {
-    width: 250,
+    width: 300,
 
-    textAlign: 'justify',
-    fontSize: 17,
-    fontWeight: 700,
-    color: '#fff',
+    textAlign: 'right',
+    fontSize: '20px !important',
+    letterSpacing: 0.5,
+    fontWeight: '700 !important',
+    color: '#000',
   },
 
   loginInfos: {
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },
@@ -72,12 +79,32 @@ const styles = makeStyles({
   buttons: {
     display: 'flex',
     flexDirection: 'column',
+    marginTop: 20,
 
     '& button': {
       marginBlock: 5,
       fontSize: 14
     }
   },
+
+  googleLogin: {
+    display: 'flex',
+    alignItems: 'center',
+
+    '& svg': {
+      width: 25,
+      height: 25,
+
+      borderRight: '1px solid #ccc',
+      paddingRight: 5,
+    },
+
+    '& span': {
+      flex: 1,
+      textAlign: 'center',
+      marginLeft: 15,
+    }
+  }
 });
 
 export default styles;
