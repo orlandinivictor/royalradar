@@ -1,6 +1,4 @@
-import {
-  makeStyles
-} from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 
 const styles = makeStyles({
   loginScreen: {
@@ -11,7 +9,7 @@ const styles = makeStyles({
     width: '100vw',
     height: '100vh',
 
-    background: 'linear-gradient(to top left, #0e2058 60%, #fff 400%)'
+    background: 'linear-gradient(to top left, #0e2058 60%, #fff 400%)',
   },
 
   loginContainer: {
@@ -26,7 +24,7 @@ const styles = makeStyles({
     backdropFilter: 'blur( 4px )',
     '-webkit-backdrop-filter': 'blur( 4px )',
     borderRadius: 10,
-    border: '1px solid rgba( 255, 255, 255, 0.18 )'
+    border: '1px solid rgba( 255, 255, 255, 0.18 )',
   },
 
   companyInfo: {
@@ -68,12 +66,12 @@ const styles = makeStyles({
     '& .Mui-focused': {
       color: '#ccc !important',
       borderColor: '#bbb !important',
-    }
+    },
   },
 
   notchedOutline: {
     borderWidth: '0px',
-    borderColor: '#bbb !important'
+    borderColor: '#bbb !important',
   },
 
   buttons: {
@@ -83,28 +81,27 @@ const styles = makeStyles({
 
     '& button': {
       marginBlock: 5,
-      fontSize: 14
-    }
+      fontSize: 14,
+    },
   },
 
   googleLogin: {
-    display: 'flex',
-    alignItems: 'center',
+    paddingLeft: '10px !important',
 
     '& svg': {
       width: 25,
       height: 25,
 
       borderRight: '1px solid #ccc',
-      paddingRight: 5,
+      paddingRight: 8,
     },
 
     '& span': {
       flex: 1,
       textAlign: 'center',
       marginLeft: 15,
-    }
-  }
+    },
+  },
 });
 
 export default styles;
