@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/royalradar/static/js/main.39103053.chunk.js",
+    "main.js.map": "/royalradar/static/js/main.39103053.chunk.js.map",
+    "runtime-main.js": "/royalradar/static/js/runtime-main.6cbfca22.js",
+    "runtime-main.js.map": "/royalradar/static/js/runtime-main.6cbfca22.js.map",
+    "static/js/2.4c551854.chunk.js": "/royalradar/static/js/2.4c551854.chunk.js",
+    "static/js/2.4c551854.chunk.js.map": "/royalradar/static/js/2.4c551854.chunk.js.map",
+    "index.html": "/royalradar/index.html",
+    "static/js/2.4c551854.chunk.js.LICENSE.txt": "/royalradar/static/js/2.4c551854.chunk.js.LICENSE.txt",
+    "static/media/logo.19e5d0ea.png": "/royalradar/static/media/logo.19e5d0ea.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6cbfca22.js",
+    "static/js/2.4c551854.chunk.js",
+    "static/js/main.39103053.chunk.js"
+  ]
+}
